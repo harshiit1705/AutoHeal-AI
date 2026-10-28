@@ -335,9 +335,12 @@ app.post('/api/demo/trigger/:scenarioId', async (req: Request, res: Response) =>
   }
 });
 
+// Vercel requires a default-exported request handler. Keep the named export
+// for existing tests/imports, and only open a local HTTP listener outside Vercel.
 export { app };
+export default app;
 
-if (process.env.NODE_ENV !== 'test') {
+if (process.env.NODE_ENV !== 'test' && !process.env.VERCEL) {
   const HOST = process.env.HOST || '127.0.0.1';
   app.listen(Number(PORT), HOST, () => {
     console.log(`AutoHeal AI Backend running on http://${HOST}:${PORT}`);
