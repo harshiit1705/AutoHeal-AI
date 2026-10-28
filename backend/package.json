@@ -6,9 +6,9 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc",
+    "build": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsc",
     "start": "tsx src/index.ts",
-    "test": "vitest run"
+    "test": "vitest run src/__tests__ --no-file-parallelism"
   },
   "dependencies": {
     "@google/genai": "^2.31.0",
