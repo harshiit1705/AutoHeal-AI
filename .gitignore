@@ -1,0 +1,11 @@
+node_modules/
+**/node_modules/
+**/dist/
+**/.vite/
+**/.vitest-cache/
+**/coverage/
+**/.env
+.env
+backend/data/*.sqlite
+backend/data/*.sqlite-shm
+backend/data/*.sqlite-wal
