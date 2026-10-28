@@ -10,6 +10,12 @@
     "test": "npm --prefix backend run test"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "@types/supertest": "^7.2.1",
+    "concurrently": "^9.1.2",
+    "supertest": "^7.3.1",
+    "vitest": "^5.0.5"
   }
 }
