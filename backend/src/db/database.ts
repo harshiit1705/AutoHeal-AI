@@ -12,10 +12,12 @@ import {
   RiskLevel
 } from '../types.js';
 
-const DB_DIR = path.resolve(process.cwd(), 'data');
+const DB_DIR = '/tmp/autoheal-data';
+
 if (!fs.existsSync(DB_DIR)) {
   fs.mkdirSync(DB_DIR, { recursive: true });
 }
+
 const DB_FILE = path.join(DB_DIR, 'autoheal.sqlite');
 
 export class DatabaseService {
